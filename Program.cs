@@ -8,13 +8,13 @@
          int max = 100;
 
 
-         for (int i = 0; i <= 7; i++) {
+         for (int tries=1; ;tries++) {
             int guess = (min + max) / 2;
 
             Console.WriteLine ($"\nIs your number {guess}?");
-            Console.WriteLine ("1. Your guess is too high");
-            Console.WriteLine ("2. Your guess is too low");
-            Console.WriteLine ("3. You guessed correctly");
+            Console.WriteLine ("1. Your guess is too high press key 1");
+            Console.WriteLine ("2. Your guess is too low press key 2");
+            Console.WriteLine ("3. You guessed correctly press key 3");
 
             int userResponse = GetUserResponse ();
 
@@ -23,7 +23,7 @@
             } else if (userResponse == 2) {
                min = guess + 1;
             } else if (userResponse == 3) {
-               Console.WriteLine ($" I guessed your number {guess} in {i} attempts.");
+               Console.WriteLine ($" I guessed your number {guess} in {tries} attempts.");
                break;
             } else {
                Console.WriteLine ("Invalid input. Please select a valid option.");
