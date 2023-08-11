@@ -24,6 +24,7 @@
             min--;
          }
          Console.WriteLine ($"LCM is {max}");
+         Console.WriteLine ($"GCD is {min}");
       }
    }
 }
