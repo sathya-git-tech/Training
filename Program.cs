@@ -10,7 +10,7 @@
            if (reversestr == inputstr) {
                Console.WriteLine ("String is Palindrome");
            } else {
-               Console.WriteLine ("String is not Palindrome");
+            Console.WriteLine ("String is not Palindrome");
            }
       }
    }
