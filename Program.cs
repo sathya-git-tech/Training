@@ -1,4 +1,6 @@
-﻿namespace Training {
+﻿using System;
+
+namespace Training {
    internal class Program {
       static void Main (string[] args) {
          Console.WriteLine ("Welcome to the Guessing Game!");
@@ -8,7 +10,7 @@
          int max = 100;
 
 
-         for (int tries=1; ;tries++) {
+         for (int tries = 1; ; tries++) {
             int guess = (min + max) / 2;
 
             Console.WriteLine ($"\nIs your number {guess}?");
@@ -40,6 +42,4 @@
 
       }
    }
-        
-   
 }
