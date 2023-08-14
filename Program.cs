@@ -1,30 +1,33 @@
 ﻿namespace Training {
    internal class Program {
       static void Main (string[] args) {
-         int num1, num2, max, min, LCM, GCD;
+         int num1, num2;
          Console.Write ("Enter a number num1:");
-         num1 = int.Parse (Console.ReadLine ());
-         Console.Write ("Enter a number num2:");
-         num2 = int.Parse (Console.ReadLine ());
+         if (int.TryParse (Console.ReadLine (), out num1) && num1 > 0) {
+            Console.Write ("Enter a number num2:");
+            if (int.TryParse (Console.ReadLine (), out num2) && num2 > 0) {
+               int gcd = GCD (num1, num2);
+               int lcm = LCM (num1, num2);
 
-         max = num1 > num2 ? num1 : num2;
-         min = num1 < num2 ? num1 : num2;
-         while (true) {
-            if(max % num1==0 && max % num2 == 0) {
-               LCM = max;
-               break;
+               Console.WriteLine ($"GCD of {num1} and {num2}:{gcd}");
+               Console.WriteLine ($"LCM of {num1} and {num2}:{lcm}");
+            } else {
+               Console.WriteLine ("Invalid input. Please enter a positive integer for the second number.");
             }
-            max++;
+         } else {
+            Console.WriteLine ("Invalid input. Please enter a positive integer for the first number.");
          }
-         while (min >= 2) {
-            if(num1 % min==0 && num2 % min == 0) {
-               GCD = min;
-               break;
-            }
-            min--;
+      }
+      static int GCD (int a, int b) {
+         while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
          }
-         Console.WriteLine ($"LCM is {max}");
-         Console.WriteLine ($"GCD is {min}");
+         return a;
+      }
+      static int LCM (int a, int b) {
+         return (a * b) / GCD (a, b);
       }
    }
 }
