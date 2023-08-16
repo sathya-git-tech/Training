@@ -9,8 +9,8 @@
                int gcd = GCD (num1, num2);
                int lcm = LCM (num1, num2);
 
-               Console.WriteLine ($"GCD of {num1} and {num2}:{gcd}");
-               Console.WriteLine ($"LCM of {num1} and {num2}:{lcm}");
+               Console.WriteLine ($"GCD of {num1} and {num2}: {gcd}");
+               Console.WriteLine ($"LCM of {num1} and {num2}: {lcm}");
             } else {
                Console.WriteLine ("Invalid input. Please enter a positive integer for the second number.");
             }
