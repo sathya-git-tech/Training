@@ -7,13 +7,13 @@ namespace Training {
          bool prime = true;
          for (int i = 2; i < n/2; i++) {
             if (n % i == 0) {
-               Console.WriteLine ("is not prime");
+               Console.WriteLine ($"{n} is not prime");
                prime = false;
                break;
             }
          }
          if (prime == true) {
-            Console.WriteLine ("is prime");
+            Console.WriteLine ($"{n} is prime");
          }
       }
    }
