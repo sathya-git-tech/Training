@@ -1,6 +1,7 @@
 ﻿namespace Training {
    internal class Program {
       static void Main (string[] args) {
+         // Fabionacci series
          Console.Write ("Enter a number n:");
          int n = int.Parse (Console.ReadLine ());
          int first = 0;
