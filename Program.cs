@@ -5,16 +5,15 @@
 
          Console.WriteLine ("Enter a number:");
          int number = int.Parse (Console.ReadLine ());
+         int num = number;
 
-         string[] units = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine" };
-         string[] teens = { "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
+         string[] units = { "Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen" };
          string[] tens = { "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety" };
 
          string words = string.Empty;
          if (number < 0 || number > 999) {
             Console.WriteLine ("Number out of range for words conversion");
          }
-
 
 
 
@@ -39,6 +38,8 @@
             }
          }
 
+         
+
          if (number > 0) {
             words += units[number];
          }
@@ -48,8 +49,7 @@
          // Convert Integer to roman
 
 
-         Console.WriteLine ("Enter a number:");
-         int num = int.Parse (Console.ReadLine ());
+         
          string romanResult = string.Empty;
          string[] roman = { "M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I" };
          int[] numbers = { 1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1 };
@@ -59,7 +59,7 @@
             if (num >= numbers[i]) {
                num -= numbers[i];
                romanResult += roman[i];
-               Console.Write ($"{roman[i]}");
+               Console.Write($"{roman[i]}");
             } else {
                i++;
             }
