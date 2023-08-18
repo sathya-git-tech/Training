@@ -1,6 +1,7 @@
 ﻿namespace Training {
    internal class Program {
       static void Main (string[] args) {
+
          // Convert numbers to words
 
          Console.WriteLine ("Enter a number:");
