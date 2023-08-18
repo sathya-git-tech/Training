@@ -61,7 +61,8 @@
                num -= numbers[i];
                romanResult += roman[i];
                Console.Write($"{roman[i]}");
-            } else {
+            } 
+            else {
                i++;
             }
          }
