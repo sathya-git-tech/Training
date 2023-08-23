@@ -6,7 +6,7 @@
          int total = 0;
 
          while (x > 0) {
-            total = total + (x % 10);
+            total +=  (x % 10);
             x /= 10;
          }
          Console.WriteLine ($"Digital root is: {total}");
