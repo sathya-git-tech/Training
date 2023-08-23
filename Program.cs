@@ -1,8 +1,10 @@
 ﻿namespace Training {
    internal class Program {
       static void Main (string[] args) {
-         for(int i = 1; i <= 16; i++) {
-            Console.WriteLine (i + " x " + 3 + " = " + (i * 3));
+         Console.Write ("Enter a number:");
+         int n = int.Parse (Console.ReadLine ());
+         for(int i = 1; i <= n; i++) {
+            Console.WriteLine ($"{i,2}" + " *  " + 3 + " = " + (i * 3));
          }
       }
    }
