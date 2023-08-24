@@ -9,14 +9,12 @@ namespace Training {
          Console.WriteLine ("\u251C" + string.Concat (Enumerable.Repeat ("\u2500\u2500\u2500\u253C", 7)) + "\u2500\u2500\u2500\u2524");
          Console.WriteLine (string.Concat (Enumerable.Repeat ("\u2502 \u265F", 8)) + "\u2502");
          Console.WriteLine ("\u251C" + string.Concat (Enumerable.Repeat ("\u2500\u2500\u2500\u253C", 7)) + "\u2500\u2500\u2500\u2524");
-         Console.WriteLine (string.Concat (Enumerable.Repeat ("\u2502   ", 8)) + "\u2502");
-         Console.WriteLine ("\u251C" + string.Concat (Enumerable.Repeat ("\u2500\u2500\u2500\u253C", 7)) + "\u2500\u2500\u2500\u2524");
-         Console.WriteLine (string.Concat (Enumerable.Repeat ("\u2502   ", 8)) + "\u2502");
-         Console.WriteLine ("\u251C" + string.Concat (Enumerable.Repeat ("\u2500\u2500\u2500\u253C", 7)) + "\u2500\u2500\u2500\u2524");
-         Console.WriteLine (string.Concat (Enumerable.Repeat ("\u2502   ", 8)) + "\u2502");
-         Console.WriteLine ("\u251C" + string.Concat (Enumerable.Repeat ("\u2500\u2500\u2500\u253C", 7)) + "\u2500\u2500\u2500\u2524");
-         Console.WriteLine (string.Concat (Enumerable.Repeat ("\u2502   ", 8)) + "\u2502");
-         Console.WriteLine ("\u251C" + string.Concat (Enumerable.Repeat ("\u2500\u2500\u2500\u253C", 7)) + "\u2500\u2500\u2500\u2524");
+
+         for (int i = 0; i < 4; i++) {
+            Console.WriteLine (string.Concat (Enumerable.Repeat ("\u2502   ", 8)) + "\u2502");
+            Console.WriteLine ("\u251C" + string.Concat (Enumerable.Repeat ("\u2500\u2500\u2500\u253C", 7)) + "\u2500\u2500\u2500\u2524");
+         }
+
          Console.WriteLine (string.Concat (Enumerable.Repeat ("\u2502 \u265F", 8)) + "\u2502");
          Console.WriteLine ("\u251C" + string.Concat (Enumerable.Repeat ("\u2500\u2500\u2500\u253C", 7)) + "\u2500\u2500\u2500\u2524");
          Console.WriteLine ("\u2502 \u2656 \u2502 \u2658 \u2502 \u2657 \u2502 \u2655 \u2502 \u2654 \u2502 \u2657 \u2502 \u2658 \u2502 \u2656 \u2502");
