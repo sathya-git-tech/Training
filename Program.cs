@@ -2,15 +2,15 @@
    internal class Program {
       static void Main (string[] args) {
          int rows, space,a;
-         Console.Write ("Enter an odd number:");
+         Console.Write ("Enter a number:");
          rows = int.Parse (Console.ReadLine ());
          
          a = 1;
-         for (int i = 0; i <= rows; i++) {
+         for (int i = 0; i < rows; i++) {
             for (space = 1; space <= rows - i; space++) {
                Console.Write ("  ");
             }
-            for (int j = 0; j <=i; j++) {
+            for (int j = 0; j <= i; j++) {
                if (j == 0) {
                    a = 1;
                } 
