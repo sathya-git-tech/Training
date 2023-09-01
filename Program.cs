@@ -10,10 +10,10 @@
          bool lower = password.Any (char.IsLower);
          bool upper = password.Any (char.IsUpper);
          bool specialchar = password.Any (c => "!@#$%^&*()-+".Contains (c));
-         bool var = length && digit && lower && upper && specialchar;
+         
 
 
-         if (var == true) {
+         if ( length && digit && lower && upper && specialchar == true) {
             Console.WriteLine ("password is strong");
          } 
          else {
