@@ -6,7 +6,7 @@
 
          for (int i = 1; i <= n * 2 - 1; i++) {
             int spaces = Math.Abs (n - i);
-            int stars = n * 2 - 1 - 2 * spaces;
+            int stars = (n * 2) - 1 - (2 * spaces);
             Console.WriteLine (string.Concat (Enumerable.Repeat (" ", spaces)) + string.Concat (Enumerable.Repeat ("*", stars)));
          }
       }
