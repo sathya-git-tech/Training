@@ -1,7 +1,7 @@
 ﻿namespace Training {
    internal class Program {
       static void Main (string[] args) {
-         // Fabionacci series
+         // Fibonacci series
          Console.Write ("Enter a number n:");
          int n = int.Parse (Console.ReadLine ());
          int first = 0;
@@ -12,7 +12,7 @@
             first = second;
             second = third;
          }
-         Console.WriteLine ($"Fabionacci of {n} is {third}"); 
+         Console.WriteLine ($"Fibonacci of {n} is {third}"); 
 
       }
    }
