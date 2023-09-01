@@ -5,44 +5,44 @@
          string password = Console.ReadLine ();
 
 
-         bool Length = password.Length >= 6;
-         bool Digit = password.Any (char.IsDigit);
-         bool Lower = password.Any (char.IsLower);
-         bool Upper = password.Any (char.IsUpper);
-         bool Specialchar = password.Any (char.IsPunctuation);
+         bool length = password.Length >= 6;
+         bool digit = password.Any (char.IsDigit);
+         bool lower = password.Any (char.IsLower);
+         bool upper = password.Any (char.IsUpper);
+         bool specialchar = password.Any (char.IsPunctuation);
 
          foreach (char i in password ) {  
                if (char.IsDigit (i)) {
-                  Digit = true;
+                  digit = true;
                }
                if (char.IsLower (i)) {
-                  Lower = true;
+                  lower = true;
                }
                if (char.IsUpper (i)) {
-                  Upper = true;
+                  upper = true;
                }
                if ("!@#$%^&*()-+".Contains (i)) {
-                  Specialchar = true;
+                  specialchar = true;
                }
          }
-         bool var = Length && Digit && Lower && Upper && Specialchar;
+         bool var = length && digit && lower && upper && specialchar;
          if (var == true) {
             Console.WriteLine ("password is strong");
          } else {
             Console.WriteLine ("password is not strong");
-            if (Length == false) {
+            if (password.Length < 6) {
                Console.WriteLine ("password should be at least 6 character");
             }
-            if (Digit == false) {
+            if (!password.Any (char.IsDigit)) { 
                Console.WriteLine ("password should contain at least one digit");
             }
-            if(Lower == false) {
+            if(!password.Any (char.IsLower)) { 
                Console.WriteLine ("password should contain at least one Lowercase English character");
             }
-            if(Upper ==false) {
+            if(!password.Any (char.IsUpper)) {
                Console.WriteLine ("password should contain at least one Uppercase English character");
             }
-            if(Specialchar == false) {
+            if (!password.Any (char.IsPunctuation)) {
                Console.WriteLine ("password should contain at least one Special character");
             }
          }
