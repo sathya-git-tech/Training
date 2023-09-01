@@ -4,11 +4,10 @@
          Console.WriteLine ("Enter a number:");
          int n = int.Parse (Console.ReadLine ());
 
-         for(int i = 1; i <= n; i++) {
-            Console.WriteLine (string.Concat (Enumerable.Repeat ("  ", n - i)) + string.Concat (Enumerable.Repeat ("* ", 2 * i - 1)));
-         }
-         for(int i = n - 1; i >= 1; i--) {
-            Console.WriteLine (string.Concat (Enumerable.Repeat ("  ", n - i)) + string.Concat (Enumerable.Repeat ("* ", 2 * i - 1)));
+         for (int i = 1; i <= n * 2 - 1; i++) {
+            int spaces = Math.Abs (n - i);
+            int stars = n * 2 - 1 - 2 * spaces;
+            Console.WriteLine (string.Concat (Enumerable.Repeat (" ", spaces)) + string.Concat (Enumerable.Repeat ("*", stars)));
          }
       }
    }
