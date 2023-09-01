@@ -7,7 +7,7 @@
          int first = 0;
          int second = 1;
          int third = first + second; 
-         for(int i =2; i < n; i++) {
+         for(int i =2; i <= n; i++) {
             third = first + second;
             first = second;
             second = third;
