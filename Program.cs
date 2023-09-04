@@ -18,19 +18,19 @@
          } 
          else {
             Console.WriteLine ("password is not strong");
-            if (password.Length < 6) {
+            if (!length) {
                Console.WriteLine ("password should be at least 6 character");
             }
-            if (!password.Any (char.IsDigit)) { 
+            if (!digit) { 
                Console.WriteLine ("password should contain at least one digit");
             }
-            if(!password.Any (char.IsLower)) { 
+            if(!lower) { 
                Console.WriteLine ("password should contain at least one Lowercase English character");
             }
-            if(!password.Any (char.IsUpper)) {
+            if(!upper) {
                Console.WriteLine ("password should contain at least one Uppercase English character");
             }
-            if (!password.Any (c => "!@#$%^&*()-+".Contains (c))) {
+            if (!specialchar ) {
                Console.WriteLine ("password should contain at least one Special character");
             }
          }
