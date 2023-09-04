@@ -6,13 +6,16 @@
          int n = int.Parse (Console.ReadLine ());
          int first = 0;
          int second = 1;
-         int third = first + second; 
-         for(int i =2; i <= n; i++) {
+         int third = first + second;
+
+         string fibonacci = string.Empty;
+         for(int i =2; i <= n-1; i++) {
             third = first + second;
             first = second;
             second = third;
+            fibonacci += third;
          }
-         Console.WriteLine ($"Fibonacci of {n} is {third}"); 
+         Console.WriteLine ($"Fibonacci of {n} is {fibonacci}"); 
 
       }
    }
