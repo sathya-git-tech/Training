@@ -1,7 +1,7 @@
 ﻿namespace Training {
    internal class Program {
       static void Main (string[] args) {
-         int rows, space,a;
+         int rows, space,a=1;
          Console.Write ("Enter a number:");
          rows = int.Parse (Console.ReadLine ());
          
@@ -10,11 +10,8 @@
             for (space = 1; space <= rows - i; space++) {
                Console.Write ("  ");
             }
-            for (int j = 0; j <= i; j++) {
-               if (j == 0) {
-                   a = 1;
-               } 
-               else {
+            for (int j = 0; j < i+1; j++) {
+               if (j > 0) { 
                   a = a * (i - j + 1) / j;
                }
                Console.Write ($"{a,-3} ");
