@@ -7,10 +7,6 @@
          if (num == ArmstrongNum (num)) Console.WriteLine ($"{num} is armstrong");
          else Console.WriteLine ($"{num} is not armstrong");
       }
-
-
-
-      
       static int ArmstrongNum (int n) {
          int length = n.ToString ().Length;
          int result = 0;
@@ -20,7 +16,6 @@
             n /= 10;
          }
          return result;
-
       }
    }
 }
