@@ -16,8 +16,7 @@
          int result = 0;
          while (n > 0) {
             int rem = n % 10;
-            int arm = (int)Math.Pow (rem, length);
-            result += arm;
+            result += (int)Math.Pow (rem, length);
             n /= 10;
          }
          return result;
