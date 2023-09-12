@@ -5,11 +5,10 @@
          string word = Console.ReadLine ();
          string result = string.Empty;
          for (int i = 0; i < word.Length; i++) {
-            if (!result.Contains (word[i])) 
-               result += word[i];
+            if (result.Contains (word[i])) break;
+            else result += word[i];
          }
-         Console.WriteLine (word.Length == result.Length ? $"string is Isogram '{result}'" : $"string is not Isogram '{result}'");
-
+         Console.WriteLine (word.Length == result.Length ? $"Input string '{result}' is an isogram." : $"Input string '{result}' is not an isogram.");
       }
    }
 }
