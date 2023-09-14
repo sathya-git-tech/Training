@@ -13,11 +13,14 @@
                if (char.IsDigit (password[i])) digit = true;
                if ("!@#$%^&*()-+".Contains (password[i])) specialchar = true;
             }
-            Console.WriteLine (digit && upper && lower && specialchar == true ? "password is strong" : "password is not strong");
-            if (!digit) Console.WriteLine ("password should contain at least one digit");
-            if (!lower) Console.WriteLine ("password should contain at least one Lowercase English character");
-            if (!upper) Console.WriteLine ("password should contain at least one Uppercase English character");
-            if (!specialchar) Console.WriteLine ("password should contain at least one Special character");
+            if (digit && upper && lower && specialchar == true)
+               Console.WriteLine ("password is strong");
+            else {
+               if (!digit) Console.WriteLine ("password should contain at least one digit");
+               if (!lower) Console.WriteLine ("password should contain at least one Lowercase English character");
+               if (!upper) Console.WriteLine ("password should contain at least one Uppercase English character");
+               if (!specialchar) Console.WriteLine ("password should contain at least one Special character");
+            }
          }
       }
    }
