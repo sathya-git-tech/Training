@@ -12,8 +12,7 @@
          foreach (string eachWord in words) {
             char[] chars = eachWord.ToCharArray ();
             Array.Sort (chars);
-            string sortedWord = new string (chars);
-            if (eachWord == sortedWord && eachWord.Length >= longestWord.Length) {
+            if (eachWord == new string (chars) && eachWord.Length >= longestWord.Length) {
                longestWord = eachWord;
             }
          }
