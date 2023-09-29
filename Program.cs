@@ -6,12 +6,8 @@
             if (number >= 1 && number <= 25) {
                int nthArmstrong = FindNthArmstrong (number);
                Console.WriteLine ($"{number}th Armstrong number is: {nthArmstrong}");
-            } else {
-               Console.WriteLine ("Please enter the number between 1 to 25");
-            }
-         } else {
-            Console.WriteLine ("Invalid input. Please provide a valid integer.");
-         }
+            } else Console.WriteLine ("Please enter the number between 1 to 25");
+         } else Console.WriteLine ("Invalid input. Please provide a valid integer.");
       }
       static int FindNthArmstrong (int n) {
          int count = 0;
