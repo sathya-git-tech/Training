@@ -2,7 +2,7 @@
    internal class Program {
       static void Main (string[] args) {
          int length = 6;
-         Random random = new Random ();
+         Random random = new ();
          int[] randomNumbers = new int[6];
          for (int i = 0; i < length; i++) randomNumbers[i] = random.Next (1, 101);
          Console.WriteLine ("Random Array: " + string.Join (" ", randomNumbers));
