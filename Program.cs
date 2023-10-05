@@ -2,9 +2,9 @@
    internal class Program {
       static void Main (string[] args) {
          Console.Write ("Enter a number: ");
-         string num = Console.ReadLine ();
-         if (double.TryParse (num, out double number)) {
-            string[] parts = num.Split ('.');
+         string number = Console.ReadLine ();
+         if (double.TryParse (number, out _)) {
+            string[] parts = number.Split ('.');
             string integralPart = parts[0];
             string fractionalPart = parts.Length > 1 ? parts[1] : "";
             Console.Write ("Integral part: ");
