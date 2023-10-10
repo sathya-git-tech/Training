@@ -14,46 +14,35 @@ namespace Training {
       #region Methods ---------------------------------------------
       /// <summary>getting input from the user </summary>
       /// <param name="args"></param>
-
       static void Main (string[] args) {
          Console.WriteLine ("Enter a word: ");
-         string input = Console.ReadLine ().ToLower ();
-         if (string.IsNullOrEmpty (input)) {
-            Console.WriteLine ("Input is empty.");
-            return;
-         }
-         // Call the method to find the winner
+         string input = Console.ReadLine ();
          Console.WriteLine (FindWinner (input));
       }
       /// <summary> Finding the winner based on the vote </summary>
       /// <param name="input">Word</param>
       static (char, int) FindWinner (string input) {
-         // Assuming these variables are declared before the loop
-         char currentChar = input[0];
+         char previousChar = input[0];
          int currentCount = 1;
-         char winnerChar = currentChar;
+         char winnerChar = previousChar;
          int winnerCount = currentCount;
-
          for (int i = 1; i < input.Length; i++) {
-            if (char.IsLetter (input[i]) && input[i] == currentChar) {
+            char inputchar = input[i];
+            if (input[i] == previousChar && previousChar != winnerChar) {
                currentCount++;
-               currentChar = input[i];
+               previousChar = inputchar;
             } else {
                if (currentCount > winnerCount) {
-                  winnerChar = char.ToUpper (currentChar);
+                  winnerChar = previousChar;
                   winnerCount = currentCount;
                }
-               if (char.IsLetter (input[i])) {
-                  currentChar = input[i];
-                  currentCount = 1;
+               if (input[i] == winnerChar) {
+                  winnerCount++;
+                  winnerChar = inputchar;
                }
+               previousChar = inputchar;
+               currentCount = 1;
             }
-         }
-
-         // Check for the last character sequence
-         if (currentCount > winnerCount) {
-            winnerChar = char.ToUpper (currentChar);
-            winnerCount = currentCount;
          }
          return (winnerChar, winnerCount);
       }
