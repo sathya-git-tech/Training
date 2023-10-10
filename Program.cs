@@ -22,9 +22,8 @@ namespace Training {
          Console.Write ("Enter a chocolate price:");
          if (!int.TryParse (Console.ReadLine (), out p1)) Console.Write ("Invalid input. Enter a valid integer: ");
          Console.Write ("Enter wrappers needed for exchange:");
-         if (!int.TryParse (Console.ReadLine (), out w1) || !(w1 > 1)) {
-            Console.WriteLine ("Enter a valid wrappers input");
-         } else {
+         if (!int.TryParse (Console.ReadLine (), out w1) || !(w1 > 1)) Console.WriteLine ("Enter a valid wrappers input");
+         else {
             var result = GetMaxChocolates (x1, p1, w1);
             Console.WriteLine ($"Result: (C = {result.C}, X = {result.X}, W = {result.W})");
          }
