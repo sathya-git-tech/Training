@@ -15,24 +15,25 @@ namespace Training {
       #region Methods ---------------------------------------------
       /// <summary> Getting input from the user </summary>
       /// <param name="args"></param>
-
       static void Main (string[] args) {
          int x1, p1, w1;
          Console.Write ("Enter a initial money:");
-         x1 = int.Parse (Console.ReadLine ());
+         if (!int.TryParse (Console.ReadLine (), out x1)) Console.Write ("Invalid input. Enter a valid integer: ");
          Console.Write ("Enter a chocolate price:");
-         p1 = int.Parse (Console.ReadLine ());
+         if (!int.TryParse (Console.ReadLine (), out p1)) Console.Write ("Invalid input. Enter a valid integer: ");
          Console.Write ("Enter wrappers needed for exchange:");
-         w1 = int.Parse (Console.ReadLine ());
-         var result = GetMaxChocolates (x1, p1, w1);
-         Console.WriteLine ($"Result: (C = {result.C}, X = {result.X}, W = {result.W})");
+         if (!int.TryParse (Console.ReadLine (), out w1) || !(w1 > 1)) {
+            Console.WriteLine ("Enter a valid wrappers input");
+         } else {
+            var result = GetMaxChocolates (x1, p1, w1);
+            Console.WriteLine ($"Result: (C = {result.C}, X = {result.X}, W = {result.W})");
+         }
       }
       /// <summary> Return the maximum number of chocolates, remaining price and wrappers </summary>
       /// <param name="money"> Amount user having intially </param>
       /// <param name="price"> Price of a chocolate </param>
       /// <param name="wrappers"> Number of wrappers can exchange the chocolate </param>
       /// <returns> Number of chocolates user can buy , remaining amount, number of wrappers left </returns>
-
       static (int C, int X, int W) GetMaxChocolates (int money, int price, int wrappers) {
          int chocolates = money / price;
          int wrappersLeft = chocolates;
