@@ -30,9 +30,8 @@ namespace Training {
             int currentCount = 1;
             // Count occurrences of the current character in the rest of the string
             for (int j = i + 1; j < input.Length; j++) {
-               if (input[j] == currentChar) {
+               if (input[j] == currentChar) 
                   currentCount++;
-               }
             }
             // Update maxChar and maxCount if a higher count is found
             if (currentCount > maxCount) {
