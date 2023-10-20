@@ -33,9 +33,17 @@ namespace Training {
       static string SwapSpecialCharacters (List<char> input, char sortOrderKey, char specialChar) {
          int count = input.Count (x => x == specialChar);
          input.RemoveAll (c => c == specialChar);
-         input.Sort ();
-         if (sortOrderKey is 'D' or 'd') input.Reverse ();
-         for (int i = 0; i < count; i++) input.Add (specialChar);
+         switch (sortOrderKey) {
+            case 'D' or 'd':
+               input.Sort ();
+               input.Reverse ();
+               for (int i = 0; i < count; i++) input.Add (specialChar);
+               break;
+            default:
+               input.Sort ();
+               for (int i = 0; i < count; i++) input.Add (specialChar);
+               break;
+         }
          return new string (input.ToArray ());
       }
       #endregion 
