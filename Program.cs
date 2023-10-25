@@ -27,20 +27,18 @@ namespace Training {
          char[] seed = { 'U', 'X', 'L', 'T', 'A', 'E', 'N' };
          var words = File.ReadAllLines ("C:\\Users\\sathya.k\\Downloads\\words.txt")
             .Where (x => x.Length >= 4 && x.Contains (seed[0]) && x.All (seed.Contains));
-         List<(string, int)> Valid = new ();
-         int score = 0, total = 0;
+         Dictionary<string, int> Valid = new ();
          foreach (var word in words) {
-            score = GetScore (word, seed);
-            Valid.Add ((word, score));
-            if (IsPangram (word, seed)) Console.ForegroundColor = ConsoleColor.Green;
-            total += score;
+            int score = (GetScore (word, seed));
+            Valid.Add (word, score);
          }
-         Valid = Valid.OrderByDescending (w => w.Item2).ThenBy (w => w.Item1).ToList ();
-         foreach (var w in Valid) {
-            Console.WriteLine ($"{w.Item2,3}.{w.Item1}");
-            Console.ResetColor ();
+         foreach (var w in Valid.OrderByDescending (w => w.Value).ThenBy (w => w.Key).ToList ()) {
+            bool ispangram = (IsPangram (w.Key, seed));
+            if (ispangram) Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine ($"{w.Value,3}.{w.Key}");
+            if (ispangram) Console.ResetColor ();
          }
-         Console.WriteLine ($"----\n{total} total");
+         Console.WriteLine ($"----\n{Valid.Values.Sum ()} total");
       }
       /// <summary> Any letter can be used more than once the score will be increase </summary>
       /// <param name="word"> Text file </param>
