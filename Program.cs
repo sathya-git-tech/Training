@@ -29,7 +29,7 @@ namespace Training {
             .Where (x => x.Length >= 4 && x.Contains (seed[0]) && x.All (seed.Contains));
          Dictionary<string, int> Valid = new ();
          foreach (var word in words) {
-            int score = (GetScore (word, seed));
+            int score = GetScore (word, seed);
             Valid.Add (word, score);
          }
          foreach (var w in Valid.OrderByDescending (w => w.Value).ThenBy (w => w.Key).ToList ()) {
