@@ -21,7 +21,7 @@ namespace Training {
          char specialChar = char.Parse (Console.ReadLine ()!);
          Console.Write ("Enter D or d for descending order, otherwise press Enter key: ");
          char sortOrderKey = Console.ReadKey ().KeyChar;
-         List<char> charList = new List<char> (input);
+         List<char> charList = new (input);
          string result = SwapSpecialCharacters (charList, sortOrderKey, specialChar);
          Console.WriteLine ("\nResult: " + result);
       }
@@ -33,17 +33,9 @@ namespace Training {
       static string SwapSpecialCharacters (List<char> input, char sortOrderKey, char specialChar) {
          int count = input.Count (x => x == specialChar);
          input.RemoveAll (c => c == specialChar);
-         switch (sortOrderKey) {
-            case 'D' or 'd':
-               input.Sort ();
-               input.Reverse ();
-               for (int i = 0; i < count; i++) input.Add (specialChar);
-               break;
-            default:
-               input.Sort ();
-               for (int i = 0; i < count; i++) input.Add (specialChar);
-               break;
-         }
+         input.Sort ();
+         if (sortOrderKey is 'D' or 'd') input.Reverse ();
+         for (int i = 0; i < count; i++) input.Add (specialChar);
          return new string (input.ToArray ());
       }
       #endregion 
