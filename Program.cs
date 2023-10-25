@@ -33,7 +33,7 @@ namespace Training {
             Valid.Add (word, score);
          }
          foreach (var w in Valid.OrderByDescending (w => w.Value).ThenBy (w => w.Key).ToList ()) {
-            bool ispangram = (IsPangram (w.Key, seed));
+            bool ispangram = IsPangram (w.Key, seed);
             if (ispangram) Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine ($"{w.Value,3}.{w.Key}");
             if (ispangram) Console.ResetColor ();
