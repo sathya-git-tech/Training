@@ -9,21 +9,34 @@
 
   <ItemGroup>
     <Compile Remove="Binarytest\**" />
+    <Compile Remove="dotCover.Output\**" />
     <Compile Remove="MyListTest\**" />
     <Compile Remove="TestProject1\**" />
     <Compile Remove="TestProject2\**" />
+    <Compile Remove="TestProject3\**" />
+    <Compile Remove="TestProject4\**" />
+    <Compile Remove="TestProject5\**" />
     <EmbeddedResource Remove="Binarytest\**" />
+    <EmbeddedResource Remove="dotCover.Output\**" />
     <EmbeddedResource Remove="MyListTest\**" />
     <EmbeddedResource Remove="TestProject1\**" />
     <EmbeddedResource Remove="TestProject2\**" />
+    <EmbeddedResource Remove="TestProject3\**" />
+    <EmbeddedResource Remove="TestProject4\**" />
+    <EmbeddedResource Remove="TestProject5\**" />
     <None Remove="Binarytest\**" />
+    <None Remove="dotCover.Output\**" />
     <None Remove="MyListTest\**" />
     <None Remove="TestProject1\**" />
     <None Remove="TestProject2\**" />
+    <None Remove="TestProject3\**" />
+    <None Remove="TestProject4\**" />
+    <None Remove="TestProject5\**" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove=".gitignore" />
+    <None Remove="dotCover.Output.html" />
   </ItemGroup>
 
 </Project>
