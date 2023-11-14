@@ -24,20 +24,24 @@ namespace Training {
    #region Program ------------------------------------------------------------------------------
    /// <summary> Classes MyList<T> </summary>
    internal class Program {
-      #region Methods ------------------------------------------------------------------------------
       /// <summary> Create MyList </summary>
       /// <param name="args"></param>
       static void Main (string[] args) {
-         MyList<int> list1 = new ();
-         List<int> list2 = new ();
       }
    }
    #endregion
+   #region MyList------------------------------------------------------------------------------
+   /// <summary> Create MyList </summary>
+   /// <typeparam name="T"></typeparam>
    public class MyList<T> {
-      T[] mArray = new T[4];
-      int mCount = 0;
+      #region Properties------------------------------------------------------------------------------
+      /// <summary> count of the array </summary>
       public int Count => mCount;
+      /// <summary> Length of the array </summary>
       public int Capacity => mArray.Length;
+      /// <summary> Set a index value </summary>
+      /// <param name="index"></param>
+      /// <returns> Return the items from list using its index </returns>
       public T this[int index] {
          get {
             CheckException (index);
@@ -48,13 +52,15 @@ namespace Training {
             mArray[index] = value;
          }
       }
-      /// <summary> Add the element </summary>
+      #endregion
+      #region Methods ------------------------------------------------------------------------------
+      /// <summary> Add all the elements </summary>
       /// <param name="item"></param>
       public void Add (T item) {
          if (mCount == mArray.Length) Array.Resize (ref mArray, mArray.Length * 2);
          mArray[mCount++] = item;
       }
-      /// <summary> Clear the element </summary>
+      /// <summary> Clear all the element </summary>
       public void Clear () {
          Array.Clear (mArray, 0, mCount);
          mCount = 0;
@@ -64,7 +70,7 @@ namespace Training {
       /// <param name="item"></param>
       /// <exception cref="IndexOutOfRangeException"></exception>
       public void Insert (int index, T item) {
-         if (index < 0 || index > mCount) throw new IndexOutOfRangeException ("Index is out of the valid range.");
+         CheckException (index);
          if (mCount == mArray.Length) Array.Resize (ref mArray, mArray.Length * 2);
          for (int i = mCount; i > index; i--) mArray[i] = mArray[i - 1];
          mArray[index] = item;
@@ -72,11 +78,10 @@ namespace Training {
       }
       /// <summary> Remove the element </summary>
       /// <param name="item"></param>
-      /// <returns></returns>
-      /// <exception cref="InvalidOperationException"></exception>
+      /// <returns> true </returns>
       public bool Remove (T item) {
          int index = Array.IndexOf (mArray, item, 0, mCount);
-         if (index < 0 || index >= mCount) throw new InvalidOperationException ("Index is out of the valid range.");
+         if (index == -1) return false;
          for (int i = index; i < mCount - 1; i++) mArray[i] = mArray[i + 1];
          mArray[--mCount] = default;
          return true;
@@ -85,14 +90,32 @@ namespace Training {
       /// <param name="index"></param>
       /// <exception cref="ArgumentOutOfRangeException"></exception>
       public void RemoveAt (int index) {
-         if (index < 0 || index >= mCount) throw new IndexOutOfRangeException ("Index is out of the valid range.");
+         ArgumentOutOfRangeException (index);
          var item = mArray[index];
          Remove (item);
       }
+      /// <summary> Check the index out of range exception </summary>
+      /// <param name="index"></param>
+      /// <returns> true </returns>
+      /// <exception cref="IndexOutOfRangeException"></exception>
       public bool CheckException (int index) {
          if (index < 0 || index >= mCount) throw new IndexOutOfRangeException ("Index is out of the valid range.");
          return true;
       }
+      /// <summary> Check argument out of range exception </summary>
+      /// <param name="index"></param>
+      /// <returns></returns>
+      /// <exception cref="ArgumentOutOfRangeException"></exception>
+      public bool ArgumentOutOfRangeException (int index) {
+         if (index < 0 || index >= mCount) throw new ArgumentOutOfRangeException ("Index is out of the valid range.");
+         return true;
+      }
+      #region Private data------------------------------------------------------------------------------
+      /// <summary> Declare and initialize the array </summary>
+      T[] mArray = new T[4];
+      int mCount = 0;
+      #endregion
    }
+   #endregion 
 }
 #endregion
