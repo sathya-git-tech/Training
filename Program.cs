@@ -26,10 +26,10 @@ namespace Training {
    internal class Program {
       /// <summary> Create MyList </summary>
       /// <param name="args"></param>
-      static void Main (string[] args) {
-      }
+      static void Main (string[] args) { }
    }
    #endregion
+
    #region MyList------------------------------------------------------------------------------
    /// <summary> Create MyList </summary>
    /// <typeparam name="T"></typeparam>
@@ -53,6 +53,7 @@ namespace Training {
          }
       }
       #endregion
+
       #region Methods ------------------------------------------------------------------------------
       /// <summary> Add all the elements </summary>
       /// <param name="item"></param>
@@ -60,11 +61,13 @@ namespace Training {
          if (mCount == mArray.Length) Array.Resize (ref mArray, mArray.Length * 2);
          mArray[mCount++] = item;
       }
+
       /// <summary> Clear all the element </summary>
       public void Clear () {
          Array.Clear (mArray, 0, mCount);
          mCount = 0;
       }
+
       /// <summary> Insert an element </summary>
       /// <param name="index"></param>
       /// <param name="item"></param>
@@ -76,6 +79,7 @@ namespace Training {
          mArray[index] = item;
          mCount++;
       }
+
       /// <summary> Remove the element </summary>
       /// <param name="item"></param>
       /// <returns> true </returns>
@@ -86,6 +90,7 @@ namespace Training {
          mArray[--mCount] = default;
          return true;
       }
+
       /// <summary> Remove the element at a specific index </summary>
       /// <param name="index"></param>
       /// <exception cref="ArgumentOutOfRangeException"></exception>
@@ -94,6 +99,7 @@ namespace Training {
          var item = mArray[index];
          Remove (item);
       }
+
       /// <summary> Check the index out of range exception </summary>
       /// <param name="index"></param>
       /// <returns> true </returns>
@@ -102,6 +108,7 @@ namespace Training {
          if (index < 0 || index >= mCount) throw new IndexOutOfRangeException ("Index is out of the valid range.");
          return true;
       }
+
       /// <summary> Check argument out of range exception </summary>
       /// <param name="index"></param>
       /// <returns></returns>
@@ -110,6 +117,8 @@ namespace Training {
          if (index < 0 || index >= mCount) throw new ArgumentOutOfRangeException ("Index is out of the valid range.");
          return true;
       }
+      #endregion
+
       #region Private data------------------------------------------------------------------------------
       /// <summary> Declare and initialize the array </summary>
       T[] mArray = new T[4];
@@ -118,4 +127,3 @@ namespace Training {
    }
    #endregion 
 }
-#endregion
