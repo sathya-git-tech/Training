@@ -21,13 +21,13 @@ namespace Training {
 
    #region Tstack------------------------------------------------------------------------------
    /// <summary> Create Tstack </summary>
-   /// <typeparam name="T"></typeparam>
+   /// <typeparam name="T"> Datatype </typeparam>
    public class Tstack<T> {
       #region Properties------------------------------------------------------------------------------
-      /// <summary> Count of the array </summary>
+      /// <summary> Length of the array </summary>
       public int Capacity => mArray.Length;
 
-      /// <summary> Length of the array </summary>
+      /// <summary> Count of the array </summary>
       public int Count => mCount;
 
       /// <summary> The count is zero </summary>
@@ -49,7 +49,6 @@ namespace Training {
 
       /// <summary> Remove the elements </summary>
       /// <returns> Return Remove the elements </returns>
-      /// 
       public T Pop () {
          CheckException ();
          T popElement = mArray[mCount - 1];
