@@ -25,28 +25,19 @@ namespace Training {
    public class Tstack<T> {
       #region Properties------------------------------------------------------------------------------
       /// <summary> Count of the array </summary>
-      public int Count => mCount;
-      /// <summary> Length of the array </summary>
       public int Capacity => mArray.Length;
+
+      /// <summary> Length of the array </summary>
+      public int Count => mCount;
+
       /// <summary> The count is zero </summary>
       public bool IsEmpty => mCount == 0;
       #endregion
-
       #region Methods------------------------------------------------------------------------------
-      /// <summary> Add all the elements </summary>
-      /// <param name="a"></param>
-      public void Push (T a) {
-         if (mCount == mArray.Length) Array.Resize (ref mArray, mArray.Length * 2);
-         mArray[mCount++] = a;
-      }
-
-      /// <summary> Remove the elements </summary>
-      /// <returns> Return Remove the elements </returns>
-      public T Pop () {
-         CheckException ();
-         T popElement = mArray[mCount - 1];
-         mArray[--mCount] = default;
-         return popElement;
+      /// <summary> Check the empty stack </summary>
+      /// <exception cref="InvalidOperationException"></exception>
+      void CheckException () {
+         if (IsEmpty) throw new InvalidOperationException ("Empty stack");
       }
 
       /// <summary> Order of the elements </summary>
@@ -56,13 +47,23 @@ namespace Training {
          return mArray[mCount - 1];
       }
 
-      /// <summary> Check the empty stack </summary>
-      /// <exception cref="InvalidOperationException"></exception>
-      void CheckException () {
-         if (IsEmpty) throw new InvalidOperationException ("Empty stack");
+      /// <summary> Remove the elements </summary>
+      /// <returns> Return Remove the elements </returns>
+      /// 
+      public T Pop () {
+         CheckException ();
+         T popElement = mArray[mCount - 1];
+         mArray[--mCount] = default;
+         return popElement;
+      }
+
+      /// <summary> Add all the elements </summary>
+      /// <param name="a"></param>
+      public void Push (T a) {
+         if (mCount == mArray.Length) Array.Resize (ref mArray, mArray.Length * 2);
+         mArray[mCount++] = a;
       }
       #endregion 
-
       #region Private data------------------------------------------------------------------------------
       /// <summary> Declare and intialize the array </summary>
       T[] mArray = new T[4];
