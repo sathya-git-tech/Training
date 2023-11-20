@@ -35,10 +35,12 @@ namespace Training {
    /// <typeparam name="T"></typeparam>
    public class MyList<T> {
       #region Properties------------------------------------------------------------------------------
-      /// <summary> count of the array </summary>
-      public int Count => mCount;
       /// <summary> Length of the array </summary>
       public int Capacity => mArray.Length;
+
+      /// <summary> count of the array </summary>
+      public int Count => mCount;
+
       /// <summary> Set a index value </summary>
       /// <param name="index"></param>
       /// <returns> Return the items from list using its index </returns>
@@ -53,13 +55,30 @@ namespace Training {
          }
       }
       #endregion
-
       #region Methods ------------------------------------------------------------------------------
       /// <summary> Add all the elements </summary>
       /// <param name="item"></param>
       public void Add (T item) {
-         if (mCount == mArray.Length) Array.Resize (ref mArray, mArray.Length * 2);
+         Resize ();
          mArray[mCount++] = item;
+      }
+
+      /// <summary> Check argument out of range exception </summary>
+      /// <param name="index"></param>
+      /// <returns></returns>
+      /// <exception cref="ArgumentOutOfRangeException"></exception>
+      public bool ArgumentOutOfRangeException (int index) {
+         if (index < 0 || index >= mCount) throw new ArgumentOutOfRangeException ();
+         return true;
+      }
+
+      /// <summary> Check the index out of range exception </summary>
+      /// <param name="index"></param>
+      /// <returns> true </returns>
+      /// <exception cref="IndexOutOfRangeException"></exception>
+      public bool CheckException (int index) {
+         if (index < 0 || index >= mCount) throw new IndexOutOfRangeException ("Index is out of the valid range.");
+         return true;
       }
 
       /// <summary> Clear all the element </summary>
@@ -74,7 +93,7 @@ namespace Training {
       /// <exception cref="IndexOutOfRangeException"></exception>
       public void Insert (int index, T item) {
          CheckException (index);
-         if (mCount == mArray.Length) Array.Resize (ref mArray, mArray.Length * 2);
+         Resize();
          for (int i = mCount; i > index; i--) mArray[i] = mArray[i - 1];
          mArray[index] = item;
          mCount++;
@@ -85,7 +104,6 @@ namespace Training {
       /// <returns> true </returns>
       public bool Remove (T item) {
          int index = Array.IndexOf (mArray, item, 0, mCount);
-         if (index == -1) return false;
          for (int i = index; i < mCount - 1; i++) mArray[i] = mArray[i + 1];
          mArray[--mCount] = default;
          return true;
@@ -100,25 +118,11 @@ namespace Training {
          Remove (item);
       }
 
-      /// <summary> Check the index out of range exception </summary>
-      /// <param name="index"></param>
-      /// <returns> true </returns>
-      /// <exception cref="IndexOutOfRangeException"></exception>
-      public bool CheckException (int index) {
-         if (index < 0 || index >= mCount) throw new IndexOutOfRangeException ("Index is out of the valid range.");
-         return true;
-      }
-
-      /// <summary> Check argument out of range exception </summary>
-      /// <param name="index"></param>
-      /// <returns></returns>
-      /// <exception cref="ArgumentOutOfRangeException"></exception>
-      public bool ArgumentOutOfRangeException (int index) {
-         if (index < 0 || index >= mCount) throw new ArgumentOutOfRangeException ("Index is out of the valid range.");
-         return true;
+      /// <summary> Resize the array </summary>
+      public void Resize () {
+         if (mCount == mArray.Length) Array.Resize (ref mArray, mArray.Length * 2);
       }
       #endregion
-
       #region Private data------------------------------------------------------------------------------
       /// <summary> Declare and initialize the array </summary>
       T[] mArray = new T[4];
