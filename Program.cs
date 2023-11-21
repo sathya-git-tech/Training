@@ -1,4 +1,4 @@
-﻿// --------------------------------------------------------------------------------------------
+﻿// ----------------------------------------------------------------------------------------------------
 // Training ~ A training program for new interns at Metamation, Batch - July 2023
 // Copyright (c) Metamation India.                                              
 // ------------------------------------------------------------------------
@@ -13,58 +13,60 @@
 // public T Peek () { }
 // public bool IsEmpty { get; }
 // InvalidOperationException: This exception should be thrown when attempting to pop or peek an empty stack. 
-// --------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------------------------------------
 namespace Training {
    internal class Program {
       static void Main (string[] args) { }
    }
 
-   #region Tstack------------------------------------------------------------------------------
-   /// <summary> Create Tstack </summary>
+   #region TStack -------------------------------------------------------------------------------------
+   /// <summary>Create Tstack</summary>
    /// <typeparam name="T"> Datatype </typeparam>
-   public class Tstack<T> {
-      #region Properties------------------------------------------------------------------------------
-      /// <summary> Length of the array </summary>
+   public class TStack<T> {
+      #region Properties ------------------------------------------------------------------------------
+      /// <summary>Length of the array</summary>
       public int Capacity => mArray.Length;
 
-      /// <summary> Count of the array </summary>
+      /// <summary>Count of the array</summary>
       public int Count => mCount;
 
-      /// <summary> The count is zero </summary>
+      /// <summary>The count is zero</summary>
       public bool IsEmpty => mCount == 0;
       #endregion
-      #region Methods------------------------------------------------------------------------------
-      /// <summary> Check the empty stack </summary>
+
+      #region Methods ---------------------------------------------------------------------------------
+      /// <summary>Check the empty stack</summary>
       /// <exception cref="InvalidOperationException"></exception>
       void CheckException () {
          if (IsEmpty) throw new InvalidOperationException ("Empty stack");
       }
 
-      /// <summary> Order of the elements </summary>
-      /// <returns> Return which order of the last element </returns>
+      /// <summary>Order of the elements</summary>
+      /// <returns>Return which order of the last element</returns>
       public T Peek () {
          CheckException ();
          return mArray[mCount - 1];
       }
 
-      /// <summary> Remove the elements </summary>
-      /// <returns> Return Remove the elements </returns>
+      /// <summary>Remove the elements</summary>
+      /// <returns>Return Remove the elements</returns>
       public T Pop () {
          CheckException ();
-         T popElement = mArray[mCount - 1];
+         T i = mArray[mCount - 1];
          mArray[--mCount] = default;
-         return popElement;
+         return i;
       }
 
-      /// <summary> Add all the elements </summary>
+      /// <summary>Add all the elements</summary>
       /// <param name="a"></param>
       public void Push (T a) {
          if (mCount == mArray.Length) Array.Resize (ref mArray, mArray.Length * 2);
          mArray[mCount++] = a;
       }
       #endregion 
-      #region Private data------------------------------------------------------------------------------
-      /// <summary> Declare and intialize the array </summary>
+
+      #region Private data ----------------------------------------------------------------------------
+      /// <summary>Declare and intialize the array</summary>
       T[] mArray = new T[4];
       int mCount = 0;
       #endregion 
