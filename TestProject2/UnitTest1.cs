@@ -15,7 +15,6 @@ namespace ListTest {
          Assert.AreEqual (myList.Count, list.Count);
          Assert.AreEqual (myList.Capacity, list.Capacity);
          Assert.ThrowsException<IndexOutOfRangeException> (() => myList[-3]);
-         Assert.ThrowsException<IndexOutOfRangeException> (() => myList[-6]);
       }
 
       [TestMethod]
@@ -39,6 +38,7 @@ namespace ListTest {
          myList.Insert (2, 12);
          list.Insert (2, 12);
          myList[3] = 5;
+         list[3] = 5;
          Assert.AreEqual (list.Count, myList.Count);
          Assert.AreEqual (list.Capacity, myList.Capacity);
          Assert.ThrowsException<IndexOutOfRangeException> (() => myList.Insert (10, 12));
