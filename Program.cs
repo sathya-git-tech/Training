@@ -1,7 +1,7 @@
-﻿// ----------------------------------------------------------------------------------------------------
+﻿// ---------------------------------------------------------------------------------------
 // Training ~ A training program for new interns at Metamation, Batch - July 2023
 // Copyright (c) Metamation India.                                              
-// ------------------------------------------------------------------------
+// ---------------------------------------------------------------------------- CUILib ---
 // Program.cs
 // Classes MYLIST<T>
 // public MyList () { } 
@@ -18,24 +18,19 @@
 // Use the template shown below for implementation. Throw exceptions when necessary.
 // IndexOutOfRangeException: This exception should be thrown when attempting to access an index that is out of the valid range. 
 // InvalidOperationException: This exception should be thrown when attempting to remove an item that is not found in the list. 
-// ----------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 using System;
 namespace Training {
-   #region Program ------------------------------------------------------------------------------------
-   /// <summary>Classes MyList<T></summary>
    internal class Program {
-      /// <summary>Create MyList</summary>
-      /// <param name="args"></param>
       static void Main (string[] args) { }
    }
-   #endregion
 
-   #region MyList -------------------------------------------------------------------------------------
+   #region MyList ------------------------------------------------------------------------
    /// <summary>Create MyList</summary>
    /// <typeparam name="T"></typeparam>
    public class MyList<T> {
-      #region Properties ------------------------------------------------------------------------------
-      /// <summary>Length of the array</summary>
+      #region Properties --------------------------------------------
+      /// <summary>Capacity of the array</summary>
       public int Capacity => mArray.Length;
 
       /// <summary>Count of the array</summary>
@@ -56,7 +51,7 @@ namespace Training {
       }
       #endregion
 
-      #region Methods ---------------------------------------------------------------------------------
+      #region Methods -----------------------------------------------
       /// <summary>Add all the elements</summary>
       /// <param name="item"></param>
       public void Add (T item) {
@@ -115,7 +110,7 @@ namespace Training {
       }
       #endregion
 
-      #region Private data ----------------------------------------------------------------------------
+      #region Private data ------------------------------------------
       /// <summary>Declare and initialize the array</summary>
       T[] mArray = new T[4];
       int mCount = 0;
