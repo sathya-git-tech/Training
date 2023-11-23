@@ -1,7 +1,7 @@
-﻿// ----------------------------------------------------------------------------------------------------
+﻿// ---------------------------------------------------------------------------------------
 // Training ~ A training program for new interns at Metamation, Batch - July 2023
 // Copyright (c) Metamation India.                                              
-// ------------------------------------------------------------------------
+// ---------------------------------------------------------------------------- CUILib ---
 // Program.cs
 // Classes TQueue<T>
 // Implement a Queue<T> using arrays as the underlying data structure.
@@ -13,20 +13,19 @@
 // public T Peek () { }
 // public bool IsEmpty { get; }
 // InvalidOperationException: This exception should be thrown when attempting to dequeue or peek an empty queue.
-// ----------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 namespace Training {
    internal class Program {
       static void Main (string[] args) { }
    }
 
-
-   #region TQueue -------------------------------------------------------------------------------------
+   #region TQueue ------------------------------------------------------------------------
    /// <summary>Create TQueue</summary>
    /// <typeparam name="T"> Datatype </typeparam>
    public class TQueue<T> {
-      #region Properties ------------------------------------------------------------------------------
+      #region Properties --------------------------------------------
       /// <summary>Length of the array</summary>
-      public int Capacity  = 4;
+      public int Capacity => mArray.Length;
 
       /// <summary>Count of the array</summary>
       public int Count => mCount;
@@ -35,7 +34,7 @@ namespace Training {
       public bool IsEmpty => mCount == 0;
       #endregion
 
-      #region Methods ---------------------------------------------------------------------------------
+      #region Methods -----------------------------------------------
       /// <summary>Check the empty queue</summary>
       /// <exception cref="InvalidOperationException"></exception>
       void CheckException () {
@@ -46,10 +45,10 @@ namespace Training {
       /// <returns>The removed element</returns>
       public T Dequeue () {
          CheckException ();
-         T i = mArray[mFront];
-         mArray[mRear] = default;
+         T i = mArray[mFirst];
+         mArray[mLast] = default;
          mCount--;
-         mRear = (mRear + 1) % Capacity;
+         mLast = (mLast + 1) % Capacity;
          return i;
       }
 
@@ -57,39 +56,38 @@ namespace Training {
       /// <param name="a"></param>
       public void Enqueue (T a) {
          if (Count == Capacity) Array.Resize (ref mArray, mArray.Length * 2);
-         mArray[mFront] = a;
+         mArray[mFirst] = a;
          mCount++;
-         mFront = (mFront + 1) % Capacity;
+         mFirst = (mFirst + 1) % Capacity;
       }
 
       /// <summary>The first-in element on the queue</summary>
       /// <returns>The first-in element of the queue</returns>
       public T Peek () {
          CheckException ();
-         Console.WriteLine (mArray[mRear]);
-         return mArray[mRear];
+         Console.WriteLine (mArray[mLast]);
+         return mArray[mLast];
       }
 
       /// <summary>Resizes the array and arranges the elements in the order of first-in to last-in on the resized array</summary>
       public void Resize () {
          var temp = new T[Capacity * 2];
          for (int i = 0; i < Capacity; i++) {
-            temp[i] = mArray[mFront];
-            mFront = (mFront + 1) % Capacity;
+            temp[i] = mArray[mFirst];
+            mFirst = (mFirst + 1) % Capacity;
          }
          mArray = temp;
-         Capacity *= 2;
-         mFront = Count;
-         mRear = 0;
+         mFirst = Count;
+         mLast = 0;
       }
       #endregion 
 
-      #region Private data ----------------------------------------------------------------------------
+      #region Private data ------------------------------------------
       /// <summary>Declare and intialize the array</summary>
       T[] mArray = new T[4];
       int mCount = 0;
-      int mFront = 0;
-      int mRear = 0;
+      int mFirst = 0;
+      int mLast = 0;
       #endregion
    }
    #endregion

@@ -9,19 +9,25 @@
 
   <ItemGroup>
     <Compile Remove="Binarytest\**" />
+    <Compile Remove="ListTest\**" />
     <Compile Remove="MyListTest\**" />
+    <Compile Remove="QueueTest1\**" />
     <Compile Remove="QueueTest\**" />
     <Compile Remove="StackTest\**" />
     <Compile Remove="TestProject1\**" />
     <Compile Remove="TestProject2\**" />
     <EmbeddedResource Remove="Binarytest\**" />
+    <EmbeddedResource Remove="ListTest\**" />
     <EmbeddedResource Remove="MyListTest\**" />
+    <EmbeddedResource Remove="QueueTest1\**" />
     <EmbeddedResource Remove="QueueTest\**" />
     <EmbeddedResource Remove="StackTest\**" />
     <EmbeddedResource Remove="TestProject1\**" />
     <EmbeddedResource Remove="TestProject2\**" />
     <None Remove="Binarytest\**" />
+    <None Remove="ListTest\**" />
     <None Remove="MyListTest\**" />
+    <None Remove="QueueTest1\**" />
     <None Remove="QueueTest\**" />
     <None Remove="StackTest\**" />
     <None Remove="TestProject1\**" />
