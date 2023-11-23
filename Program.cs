@@ -1,7 +1,7 @@
-﻿// ----------------------------------------------------------------------------------------------------
+﻿// ---------------------------------------------------------------------------------------
 // Training ~ A training program for new interns at Metamation, Batch - July 2023
 // Copyright (c) Metamation India.                                              
-// ------------------------------------------------------------------------
+// ---------------------------------------------------------------------------- CUILib ---
 // Program.cs
 // Classes TStack<T>
 // Implement a Stack<T> class using arrays as the underlying data structure.
@@ -13,17 +13,17 @@
 // public T Peek () { }
 // public bool IsEmpty { get; }
 // InvalidOperationException: This exception should be thrown when attempting to pop or peek an empty stack. 
-// ----------------------------------------------------------------------------------------------------
+// ---------------------------------------------------------------------------------------
 namespace Training {
    internal class Program {
       static void Main (string[] args) { }
    }
 
-   #region TStack -------------------------------------------------------------------------------------
+   #region TStack ------------------------------------------------------------------------
    /// <summary>Create Tstack</summary>
    /// <typeparam name="T"> Datatype </typeparam>
    public class TStack<T> {
-      #region Properties ------------------------------------------------------------------------------
+      #region Properties --------------------------------------------
       /// <summary>Length of the array</summary>
       public int Capacity => mArray.Length;
 
@@ -34,7 +34,7 @@ namespace Training {
       public bool IsEmpty => mCount == 0;
       #endregion
 
-      #region Methods ---------------------------------------------------------------------------------
+      #region Methods -----------------------------------------------
       /// <summary>Check the empty stack</summary>
       /// <exception cref="InvalidOperationException"></exception>
       void CheckException () {
@@ -65,7 +65,7 @@ namespace Training {
       }
       #endregion 
 
-      #region Private data ----------------------------------------------------------------------------
+      #region Private data ------------------------------------------
       /// <summary>Declare and intialize the array</summary>
       T[] mArray = new T[4];
       int mCount = 0;
