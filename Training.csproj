@@ -4,6 +4,22 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+	  <OutDir >..bin\</OutDir>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ListTest\**" />
+    <Compile Remove="QueueTest1\**" />
+    <Compile Remove="StackTest\**" />
+    <Compile Remove="TestQueue\**" />
+    <EmbeddedResource Remove="ListTest\**" />
+    <EmbeddedResource Remove="QueueTest1\**" />
+    <EmbeddedResource Remove="StackTest\**" />
+    <EmbeddedResource Remove="TestQueue\**" />
+    <None Remove="ListTest\**" />
+    <None Remove="QueueTest1\**" />
+    <None Remove="StackTest\**" />
+    <None Remove="TestQueue\**" />
+  </ItemGroup>
 
 </Project>
