@@ -55,7 +55,7 @@ namespace Training {
       /// <summary>Add the element on the queue</summary>
       /// <param name="a"></param>
       public void Enqueue (T a) {
-         if (Count == Capacity) Array.Resize (ref mArray, mArray.Length * 2);
+         if (Count == Capacity) Resize ();
          mArray[mFirst] = a;
          mCount++;
          mFirst = (mFirst + 1) % Capacity;
@@ -70,7 +70,7 @@ namespace Training {
       }
 
       /// <summary>Resizes the array and arranges the elements in the order of first-in to last-in on the resized array</summary>
-      public void Resize () {
+      void Resize () {
          var temp = new T[Capacity * 2];
          for (int i = 0; i < Capacity; i++) {
             temp[i] = mArray[mFirst];
