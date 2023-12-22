@@ -19,7 +19,7 @@ namespace Training {
          while (!reader.EndOfStream)
             input.Add (reader.ReadLine ());
          for (int i = 0; i < input.Count; i++) {
-            if (input[i].Contains ("Mango") || input[i].Contains ("Bananana") || input[i].Contains ("Papaya")) {
+            if (input[i].Contains ("Mango") || input[i].Contains ("Banana") || input[i].Contains ("Papaya")) {
                input[i] = input[i].Replace ("Fruit", "Vegetable");
             }
             if (input[i].Contains ("Orange")) input[i] = input[i].Replace ("Fruit", "Color");

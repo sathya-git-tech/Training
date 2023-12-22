@@ -1,0 +1,6 @@
+Apple=Fruit
+Mango=Fruit
+Orange=Fruit
+Banana=Fruit
+Grapes=Fruit
+Papaya=Fruit
