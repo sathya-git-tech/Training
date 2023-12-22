@@ -21,4 +21,12 @@
     <None Remove="TestQueue\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="data\input.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="data\input.txt" />
+  </ItemGroup>
+
 </Project>
