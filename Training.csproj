@@ -4,17 +4,21 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <BaseOutputPath>W:\Training\..bin</BaseOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="bin\**" />
     <Compile Remove="ListTest\**" />
     <Compile Remove="StackTest\**" />
     <Compile Remove="TestProject2\**" />
     <Compile Remove="TestQueue\**" />
+    <EmbeddedResource Remove="bin\**" />
     <EmbeddedResource Remove="ListTest\**" />
     <EmbeddedResource Remove="StackTest\**" />
     <EmbeddedResource Remove="TestProject2\**" />
     <EmbeddedResource Remove="TestQueue\**" />
+    <None Remove="bin\**" />
     <None Remove="ListTest\**" />
     <None Remove="StackTest\**" />
     <None Remove="TestProject2\**" />
@@ -22,7 +26,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove=".gitignore" />
     <None Remove="data\input.txt" />
+    <None Remove="output.txt" />
   </ItemGroup>
 
   <ItemGroup>

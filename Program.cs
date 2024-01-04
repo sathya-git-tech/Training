@@ -11,20 +11,32 @@ namespace Training {
    #region Program -----------------------------------------------------------------------
    /// <summary>Simple basic Assignment</summary>
    internal class Program {
-      static void Main (string[] args) {
+      static void Main () {
          using var stream = Assembly.GetExecutingAssembly ().GetManifestResourceStream ("Training.data.input.txt");
          using var reader = new StreamReader (stream);
          using var writer = new StreamWriter ("..\\..\\..\\data\\output.txt");
-         var input = new List<string> ();
-         while (!reader.EndOfStream)
-            input.Add (reader.ReadLine ());
-         for (int i = 0; i < input.Count; i++) {
-            if (input[i].Contains ("Mango") || input[i].Contains ("Banana") || input[i].Contains ("Papaya")) {
-               input[i] = input[i].Replace ("Fruit", "Vegetable");
+         string output = reader.ReadToEnd ();
+         var lines = output.Split ('\n').ToList ();
+         Dictionary<string, string> replacements = new ();
+         foreach (var i in lines) {
+            lines = i.Split ('=').ToList ();
+            switch (lines[0]) {
+               case "Mango":
+               case "Banana":
+               case "Papaya":
+                  replacements.Add (lines[0], "Vegetable");
+                  break;
+               case "Orange":
+                  replacements.Add (lines[0], "Color");
+                  break;
+               default:
+                  replacements.Add (lines[0], lines[1]);
+                  break;
             }
-            if (input[i].Contains ("Orange")) input[i] = input[i].Replace ("Fruit", "Color");
-            Console.WriteLine (input[i]);
-            writer.WriteLine (input[i]);
+         }
+         foreach (var keyValuePair in replacements) {
+            Console.WriteLine ($"{keyValuePair.Key}={keyValuePair.Value}", $"{keyValuePair.Key}={keyValuePair.Value}");
+            writer.Write ($"{keyValuePair.Key}={keyValuePair.Value}", $"{keyValuePair.Key}={keyValuePair.Value}");
          }
       }
    }

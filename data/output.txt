@@ -1,6 +1,1 @@
-Apple=Fruit
-Mango=Vegetable
-Orange=Color
-Banana=Vegetable
-Grapes=Fruit
-Papaya=Vegetable
+Apple=FruitMango=VegetableOrange=ColorBanana=VegetableGrapes=FruitPapaya=Vegetable
