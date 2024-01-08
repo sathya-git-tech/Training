@@ -1,16 +1,16 @@
-﻿namespace Training {
+﻿// Write a program to calculate and display the average of four numbers entered by the user. 
+namespace Training {
    internal class Program {
       static void Main (string[] args) {
-         Console.WriteLine ("Enter the total count of numbers: ");
-         int Total = int.Parse (Console.ReadLine ());
-         float Average; int Sum = 0, Value;
-         for (int i = 0; i < Total; i++) {
-            Console.Write ("Enter a number: ");
-            Value = int.Parse (Console.ReadLine ());
-            Sum += Value;
+         int[] total = new int[4];
+         float average; int sum = 0, value;
+         for (int i = 0; i < total.Length; i++) {
+            Console.Write ("Enter a number : ");
+            value = int.Parse (Console.ReadLine ());
+            sum += value;
          }
-         Average = (float)Sum / Total;
-         Console.WriteLine ("Average: " + Average);
+         average = (float)sum / total.Length;
+         Console.WriteLine ($"Average = {average}");
       }
    }
 }
