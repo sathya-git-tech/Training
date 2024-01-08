@@ -3,7 +3,8 @@
 // Copyright (c) Metamation India.
 // ---------------------------------------------------------------------------- Training -
 // Program.cs
-// Write a C# program to print the addition, subtraction, multiplication, division, modulo division of two numbers which will entered by the user. 
+// Write a C# program to print the addition, subtraction, multiplication, division,
+// modulo division of two numbers which will entered by the user. 
 // ---------------------------------------------------------------------------------------
 namespace Training {
    #region class Program -----------------------------------------------------------------
@@ -13,9 +14,9 @@ namespace Training {
       /// <summary>Getting input from the user</summary>
       /// <param name="args"></param>
       static void Main (string[] args) {
-         Console.Write ("Enter a number1:");
+         Console.Write ("Enter a number1 : ");
          int num1 = int.Parse (Console.ReadLine ());
-         Console.Write ("Enter a number2:");
+         Console.Write ("Enter a number2 : ");
          int num2 = int.Parse (Console.ReadLine ());
          Console.WriteLine ("Addition : " + (num1 + num2));
          Console.WriteLine ("Subraction : " + (num1 - num2));
