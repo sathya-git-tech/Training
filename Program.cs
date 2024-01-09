@@ -7,18 +7,14 @@
 // It is positive or negative. 
 // ---------------------------------------------------------------------------------------
 namespace Training {
-   #region Program -----------------------------------------------------------------------
+   #region Program --------------------------------------------------------------------------------
    /// <summary>Positive or negative</summary>
    internal class Program {
-      #region Method ------------------------------------------------
-      /// <summary>Getting input from the user</summary>
-      /// <param name="args">n</param>
       static void Main (string[] args) {
          Console.Write ("Enter a number : ");
-         int n = int.Parse (Console.ReadLine ());
-         Console.WriteLine (n > 0 ? $"The number {n} is positive" : $"The number {n} is negative");
+         int number = int.Parse (Console.ReadLine ());
+         Console.WriteLine (number > 0 ? $"The number {number} is positive" : $"The number {number} is negative");
       }
    }
-   #endregion 
 }
 #endregion
