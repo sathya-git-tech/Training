@@ -3,11 +3,12 @@
 // Copyright (c) Metamation India.
 // ---------------------------------------------------------------------------- Training -
 // Program.cs
-// Create a program to display on the screen the odd numbers from  50 to 1 (downwards), using "while" 
+// Create a program to display on the screen the odd numbers
+// From  50 to 1 (downwards), using "while" 
 // ---------------------------------------------------------------------------------------
 namespace Training {
    #region Program -----------------------------------------------------------------------
-   /// <summary>Create a program to display on the screen the odd numbers from  50 to 1 (downwards)</summary>
+   /// <summary>Odd numbers from  50 to 1 (downwards), using "while"</summary>
    internal class Program {
       static void Main (string[] args) {
          int n = 50;
