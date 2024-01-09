@@ -8,21 +8,18 @@
 // Login is "Learn" and the password is "74123". The user will have 3 attempts maximum. 
 // ---------------------------------------------------------------------------------------
 namespace Training {
-   #region Program -----------------------------------------------------------------------
+   #region Program --------------------------------------------------------------------------------
    /// <summary>Login user id and password</summary>
    internal class Program {
-      #region Method ------------------------------------------------
-      /// <summary>Getting input from the user</summary>
-      /// <param name="args">x,y</param>
       static void Main (string[] args) {
          string login = "Learn";
          string password = "74123";
          for (int i = 1; i <= 3; i++) {
             Console.Write ("Enter a login Id : ");
-            string x = Console.ReadLine ();
+            string id = Console.ReadLine ();
             Console.Write ("Enter a password : ");
-            string y = Console.ReadLine ();
-            if (login == x && password == y) {
+            string pw = Console.ReadLine ();
+            if (login == id && password == pw) {
                Console.WriteLine ($"You have succesfully Login in {i} attempts.");
                break;
             } else {
@@ -32,6 +29,5 @@ namespace Training {
          }
       }
    }
-   #endregion
 }
 #endregion
