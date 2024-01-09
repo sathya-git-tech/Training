@@ -18,8 +18,7 @@ namespace Training {
             Console.Write ("Enter a number : ");
             int x = int.Parse (Console.ReadLine ());
             if (x == 0) break;
-            int result = 10 * x;
-            Console.WriteLine ($"10 * {x} = {result}");
+            Console.WriteLine ($"10 * {x} = {10 * x}");
          }
       }
    }
