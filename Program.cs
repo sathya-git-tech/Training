@@ -3,26 +3,18 @@
 // Copyright (c) Metamation India.
 // ---------------------------------------------------------------------------- Training -
 // Program.cs
-// Create a C# program to ask the user for 5 numbers,
-// store them in an array and show them in reverse order.  
+// Create a program to write the letters "B" to "N" (uppercase), using "for".
 // ---------------------------------------------------------------------------------------
+
 namespace Training {
    #region Program --------------------------------------------------------------------------------
-   /// <summary>Reverse order</summary>
+   /// <summary>Print the letters "B" to "N" (uppercase)</summary>
    internal class Program {
       static void Main (string[] args) {
-         int[] n = new int[5];
-         for (; ; ) {
-            Console.Write ("Enter a number : ");
-            int value = int.Parse (Console.ReadLine ());
-            int remainder = 0;
-            while (value > 0) {
-               remainder = ((remainder * 10) + value % 10);
-               value /= 10;
-            }
-            Console.WriteLine ($"{remainder}");
-         }
+         char[] letters = { 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N' };
+         for (int i = 0; i < letters.Length; i++)
+            Console.WriteLine (letters[i]);
       }
    }
+   #endregion 
 }
-#endregion
