@@ -19,13 +19,13 @@ namespace Training {
          int num3 = int.Parse (Console.ReadLine ());
          if (num1 > num2) {
             if (num1 > num3)
-               Console.Write ("The 1st Number is the greatest among three.\n");
+               Console.Write ($"The Number {num1} is the greatest among three.\n");
             else
-               Console.Write ("The 3rd Number is the greatest among three.\n");
+               Console.Write ($"The Number {num3} is the greatest among three.\n");
          } else if (num2 > num3)
-            Console.Write ("The 2nd Number is the greatest among three.\n");
+            Console.Write ($"The Number {num2} is the greatest among three.\n");
          else
-            Console.Write ("The 3rd Number is the greatest among three.\n");
+            Console.Write ($"The Number {num3} is the greatest among three.\n");
       }
    }
    #endregion 
