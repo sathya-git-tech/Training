@@ -11,9 +11,8 @@ namespace Training {
    /// <summary>Print the letters "B" to "N" (uppercase)</summary>
    internal class Program {
       static void Main (string[] args) {
-         char[] letters = { 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N' };
-         for (int i = 0; i < letters.Length; i++)
-            Console.WriteLine (letters[i]);
+         for (char letter = 'B'; letter <= 'N'; letter++)
+            Console.WriteLine (letter + " ");
       }
    }
    #endregion 
