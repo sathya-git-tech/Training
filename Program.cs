@@ -13,23 +13,23 @@ namespace Training {
    internal class Program {
       static void Main (string[] args) {
          for (; ; ) {
-            Console.Write ("Enter an alphabet (A-Z) or (a-z) : ");
-            char ch = Convert.ToChar (Console.ReadLine ().ToLower ());
-            if (char.IsDigit (ch) || ("!@#$%^&*()-+".Contains (ch)))
-               Console.WriteLine ("You entered a number, Please enter an alphabet.");
-            else {
-               switch (ch) {
-                  case 'a':
-                  case 'e':
-                  case 'i':
-                  case 'o':
-                  case 'u':
-                     Console.WriteLine ("The alphabet is vowel");
-                     break;
-                  default:
-                     Console.WriteLine ("The alphabet is not a vowel");
-                     break;
-               }
+            Console.Write ("Enter a symbol : ");
+            char symbol = Convert.ToChar (Console.ReadLine ().ToLower ());
+            switch (symbol) {
+               case 'a':
+               case 'e':
+               case 'i':
+               case 'o':
+               case 'u':
+                  Console.WriteLine ("The symbol is vowel");
+                  break;
+               case >= '0' and <= '9':
+                  Console.WriteLine ("The symbol is digit");
+                  break;
+
+               default:
+                  Console.WriteLine ("The symbol is neither a vowel nor a digit.");
+                  break;
             }
          }
       }
