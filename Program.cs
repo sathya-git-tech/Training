@@ -16,7 +16,7 @@ namespace Training {
             Console.Write ("Enter an alphabet (A-Z) or (a-z) : ");
             char ch = Convert.ToChar (Console.ReadLine ().ToLower ());
             if (char.IsDigit (ch) || ("!@#$%^&*()-+".Contains (ch)))
-               Console.WriteLine ("You entered a number, please enter the alphabet.");
+               Console.WriteLine ("You entered a number, Please enter an alphabet.");
             else {
                switch (ch) {
                   case 'a':
