@@ -11,7 +11,7 @@
 
 namespace Training {
    #region Program --------------------------------------------------------------------------------
-   /// <summary>Operation (+,-,*,x,/)</summary>
+   /// <summary>Operation (+,-,*,%,/)</summary>
    internal class Program {
       static void Main (string[] args) {
          Console.Write ("Enter a first number : ");
@@ -22,19 +22,19 @@ namespace Training {
          int num2 = int.Parse (Console.ReadLine ());
          switch (operation) {
             case "+":
-               Console.WriteLine ($"{num1} + {num2} = " + (num1 + num2));
+               Console.WriteLine ($"{num1} + {num2} = {num1 + num2}");
                break;
             case "-":
-               Console.WriteLine ($"{num1} - {num2} = " + (num1 - num2));
+               Console.WriteLine ($"{num1} - {num2} = {num1 - num2}");
                break;
             case "*":
-               Console.WriteLine ($"{num1} * {num2} = " + (num1 * num2));
+               Console.WriteLine ($"{num1} * {num2} = {num1 * num2}");
                break;
             case "/":
-               Console.WriteLine ($"{num1} / {num2} = " + (num1 / num2));
+               Console.WriteLine ($"{num1} / {num2} = {num1 / num2}");
                break;
             case "%":
-               Console.WriteLine ($"{num1} % {num2} = " + (num1 % num2));
+               Console.WriteLine ($"{num1} % {num2} = {num1 % num2}");
                break;
             default:
                Console.WriteLine ("Invalid operation");
