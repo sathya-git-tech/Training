@@ -14,12 +14,12 @@ namespace Training {
    /// <summary>Find the absolute value</summary>
    internal class Program {
       static void Main (string[] args) {
-         for (; ; ) {
-            Console.Write ("Enter a number : ");
-            int number = int.Parse (Console.ReadLine ());
-            number = Math.Abs (number);
-            Console.WriteLine ($"Absolute value is : {number}");
-         }
+         Console.Write ("Enter a number : ");
+         string input = Console.ReadLine ();
+         if (double.TryParse (input, out double value)) {
+            double absoluteValue = (value < 0) ? -value : value;
+            Console.WriteLine ($"Absolute value of {input} is {absoluteValue}");
+         } else Console.WriteLine ("Invalid input. Please enter a valid number");
       }
    }
    #endregion 
