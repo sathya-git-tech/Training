@@ -45,9 +45,9 @@ namespace Training {
 
       /// <summary>Add one point</summary>
       static void AddPoints () {
-         Console.Write ("Enter a first point : ");
+         Console.Write ("Enter X : ");
          double x1 = double.Parse (Console.ReadLine ());
-         Console.Write ("Enter a second point : ");
+         Console.Write ("Enter Y : ");
          double y1 = double.Parse (Console.ReadLine ());
          pointList.Add ((x1, y1));
          Console.WriteLine ("Point added successfully!");
