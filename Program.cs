@@ -13,21 +13,21 @@ namespace Training {
    /// <summary>Create a "struct" to store data of 2D points</summary>
    internal class Program {
       struct Point {
-         public double x;
-         public double y;
+         public double X;
+         public double Y;
       }
       static void Main (string[] args) {
          Point p1, p2;
          Console.Write ("Enter X for first point : ");
-         p1.x = double.Parse (Console.ReadLine ());
+         p1.X = double.Parse (Console.ReadLine ());
          Console.Write ("Enter Y for first point : ");
-         p1.y = double.Parse (Console.ReadLine ());
+         p1.Y = double.Parse (Console.ReadLine ());
          Console.Write ("Enter X for second point : ");
-         p2.x = double.Parse (Console.ReadLine ());
+         p2.X = double.Parse (Console.ReadLine ());
          Console.Write ("Enter Y for second point : ");
-         p2.y = double.Parse (Console.ReadLine ());
-         Console.WriteLine ("P1 = ({0},{1})", p1.x, p1.y);
-         Console.WriteLine ("P2 = ({0},{1})", p2.x, p2.y);
+         p2.Y = double.Parse (Console.ReadLine ());
+         Console.WriteLine ("P1 = ({0},{1})", p1.X, p1.Y);
+         Console.WriteLine ("P2 = ({0},{1})", p2.X, p2.Y);
       }
    }
    #endregion 
