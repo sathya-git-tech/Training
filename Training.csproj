@@ -6,4 +6,27 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="ListTest\**" />
+    <Compile Remove="StackTest\**" />
+    <Compile Remove="TestProject2\**" />
+    <Compile Remove="TestQueue\**" />
+    <EmbeddedResource Remove="ListTest\**" />
+    <EmbeddedResource Remove="StackTest\**" />
+    <EmbeddedResource Remove="TestProject2\**" />
+    <EmbeddedResource Remove="TestQueue\**" />
+    <None Remove="ListTest\**" />
+    <None Remove="StackTest\**" />
+    <None Remove="TestProject2\**" />
+    <None Remove="TestQueue\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Data\words.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\words.txt" />
+  </ItemGroup>
+
 </Project>
