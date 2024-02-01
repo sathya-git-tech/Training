@@ -18,34 +18,39 @@ namespace Training {
          public int Day;
          public int Month;
          public int Year;
+
+         public Date (int day, int month, int year) {
+            Day = day;
+            Month = month;
+            Year = year;
+         }
       }
 
       public struct Person {
          public string Name;
          public Date Birthday;
+
+         public Person (string name, Date birthday) {
+            Name = name;
+            Birthday = birthday;
+         }
       }
 
       static void Main (string[] args) {
-         for (; ; ) {
-            Person p1, p2;
-            Console.Write ("Enter a name (with intial) : ");
-            p1.Name = Console.ReadLine ();
-            Console.Write ("Enter a Birythday Day : ");
-            p1.Birthday.Day = int.Parse (Console.ReadLine ());
+         Person[] people = new Person[2];
+         for (int i = 0; i < 2; i++) {
+            Console.Write ("Enter a name (with initial) : ");
+            string name = Console.ReadLine ();
+            Console.Write ("Enter a Birthday Day : ");
+            int day = int.Parse (Console.ReadLine ());
             Console.Write ("Enter a Birthday Month : ");
-            p1.Birthday.Month = int.Parse (Console.ReadLine ());
+            int month = int.Parse (Console.ReadLine ());
             Console.Write ("Enter a Birthday Year : ");
-            p1.Birthday.Year = int.Parse (Console.ReadLine ());
-            Console.Write ("Enter a name : ");
-            p2.Name = Console.ReadLine ();
-            Console.Write ("Enter a Birythday Day : ");
-            p2.Birthday.Day = int.Parse (Console.ReadLine ());
-            Console.Write ("Enter a Birthday Month : ");
-            p2.Birthday.Month = int.Parse (Console.ReadLine ());
-            Console.Write ("Enter a Birthday Year : ");
-            p2.Birthday.Year = int.Parse (Console.ReadLine ());
-            Console.Write ($"{p1.Name} : {p1.Birthday.Day}-{p1.Birthday.Month}-{p1.Birthday.Year}\n");
-            Console.Write ($"{p2.Name} : {p2.Birthday.Day}-{p2.Birthday.Month}-{p2.Birthday.Year}\n");
+            int year = int.Parse (Console.ReadLine ());
+            people[i] = new Person (name, new Date (day, month, year));
+         }
+         foreach (Person p in people) {
+            Console.WriteLine ($"{p.Name} : {p.Birthday.Day}-{p.Birthday.Month}-{p.Birthday.Year}");
          }
       }
    }
